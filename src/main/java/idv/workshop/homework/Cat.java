@@ -23,4 +23,40 @@ public class Cat {
      *
      */
 
+    private String name;
+    private int age;
+    private int weight;
+    private String color;
+    private String gender;
+
+    public Cat(){
+    }
+
+    public Cat(String name, int age, int weight, String color, String gender){
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.color = color;
+        this.gender = gender;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getAge(){
+        return age;
+    }
+
+    public int getWeight(){
+        return weight;
+    }
+
+    public String getColor(){
+        return color;
+    }
+
+    public String getGender(){
+        return gender;
+    }
 }
