@@ -59,4 +59,8 @@ public class Cat {
     public String getGender(){
         return gender;
     }
+
+    public boolean isMale() {
+        return this.gender.equals("male") ? true : false;
+    }
 }
