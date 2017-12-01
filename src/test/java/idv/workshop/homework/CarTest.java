@@ -10,7 +10,7 @@ public class CarTest {
 
     @Test
     public void testCreate(){
-        final String nameOfSubaru = "Subaru";
+        final String brandOfSubaru = "Subaru";
         final String colorOfSubaru = "blus";
         final int generationOfSubaru = 100;
         final int carAgeOfSubaru = 3;
@@ -19,9 +19,9 @@ public class CarTest {
         final String weaponNameOfSubaru = "Japanese sword";
         final int maxSpeedOfSubaru = 220;
 
-        Car subaru = new Car(nameOfSubaru, colorOfSubaru, generationOfSubaru, carAgeOfSubaru, numberOfWheelOfSubaru, hasWeaponOfSubaru, weaponNameOfSubaru, maxSpeedOfSubaru);
+        Car subaru = new Car(brandOfSubaru, colorOfSubaru, generationOfSubaru, carAgeOfSubaru, numberOfWheelOfSubaru, hasWeaponOfSubaru, weaponNameOfSubaru, maxSpeedOfSubaru);
 
-        assertEquals(nameOfSubaru, subaru.getName());
+        assertEquals(brandOfSubaru, subaru.getBrand());
         assertEquals(colorOfSubaru, subaru.getColor());
         assertEquals(generationOfSubaru, subaru.getGeneration());
         assertEquals(carAgeOfSubaru, subaru.getCarAge());
