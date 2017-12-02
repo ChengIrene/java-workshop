@@ -10,6 +10,7 @@ public class CarTest {
 
     @Test
     public void testCreate(){
+        
         final String brandOfSubaru = "Subaru";
         final String colorOfSubaru = "blus";
         final int generationOfSubaru = 100;
@@ -35,5 +36,29 @@ public class CarTest {
         assertFalse(subaru.isOldGenerationCar());
         assertFalse(subaru.isOldAgeCar());
 
+        final String brandOfMazda = "Mazda";
+        final String colorOfMazda = "red";
+        final int generationOfMazda = 90;
+        final int carAgeOfMazda = 10;
+        final int numberOfWheelOfMazda = 6;
+        final boolean hasWeaponOfMazda = true;
+        final String weaponNameOfMazda = "gun";
+        final int maxSpeedOfMazda = 250;
+
+        Car mazda = new Car (brandOfMazda, colorOfMazda, generationOfMazda, carAgeOfMazda, numberOfWheelOfMazda, hasWeaponOfMazda, weaponNameOfMazda, maxSpeedOfMazda);
+
+        assertEquals(brandOfMazda, mazda.getBrand());
+        assertEquals(colorOfMazda, mazda.getColor());
+        assertEquals(generationOfMazda, mazda.getGeneration());
+        assertEquals(carAgeOfMazda, mazda.getCarAge());
+        assertEquals(numberOfWheelOfMazda, mazda.getNumberOfWheel());
+        assertTrue(mazda.isHasWeapon());
+        assertEquals(weaponNameOfMazda, mazda.getWeaponName());
+
+        assertFalse(mazda.hasFourWheel());
+        assertTrue(mazda.isRacingCar());
+        assertFalse(mazda.isOldGenerationCar());
+        assertTrue(mazda.isOldAgeCar());
     }
+
 }
