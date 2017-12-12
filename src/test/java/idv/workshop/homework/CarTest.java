@@ -10,7 +10,7 @@ public class CarTest {
 
     @Test
     public void testCreate(){
-        
+
         final String brandOfSubaru = "Subaru";
         final String colorOfSubaru = "blus";
         final int generationOfSubaru = 100;
