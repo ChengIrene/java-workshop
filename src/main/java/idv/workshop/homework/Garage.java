@@ -11,9 +11,9 @@ public class Garage {
     *
     * 1. add a car into the garage (add) ...v
     * 2. remove a car from the garage by index (remove) ...v
-    * 3. remove all cars in the garage (removeAll) ...v
+    * 3. remove all cars in the garage (removeCars) ...v
     * 4. to check a car is in the garage or not (contains?) ...v
-    * 5. get the index of specified car (???) indexOf
+    * 5. get the index of specified car (???) indexOf ...OK
     * 6. the garage is empty or not (isEmpty?) ...v
     * 7. get the total number of cars in this garage (size) car.size()
     *
@@ -21,36 +21,39 @@ public class Garage {
 
     private ArrayList<Car> cars = new ArrayList<>();
 
-    public Garage(){
-    }
-
     //1. add a car into the garage (add)
-    public void parkCarIntoGarage(Car car) {
+    public void park(Car car) {
         cars.add(car);
     }
 
     //2. remove a car from the garage by index
-    public boolean removeACarFromGarage(Car car) {
+    public boolean remove(Car car) {
         return cars.remove(car);
     }
 
-    //3. remove all cars in the garage
-    public boolean removeAllCarsFromGarage(List<Car> carsNeedToBeRemoved) {
+    /*3. remove cars in the garage
+     *
+     * public boolean removeSpecifiedCars(List carsNeedToBeRemoved)
+     * public boolean removeByList(List carsNeedToBeRemoved)
+     * public boolean removeCars(List carsNeedToBeRemoved)
+     *
+     * */
+    public boolean removeCars(List<Car> carsNeedToBeRemoved) {
         return this.cars.removeAll(carsNeedToBeRemoved);
     }
 
     //4. to check a car is in the garage or not
-    public boolean isCarInGarage(Car car) {
+    public boolean isCarPresent(Car car) {
         return cars.contains(car);
     }
 
     //5. get the index of specified car
-    public int getIndexOfCar(Car car) {
+    public int getIndexOf(Car car) {
         return cars.indexOf(car);
     }
 
     //6. the garage is empty or not
-    public boolean isGarageEmpty() {
+    public boolean isEmpty() {
         return cars.isEmpty();
     }
 
@@ -61,5 +64,10 @@ public class Garage {
 
     public ArrayList<Car> getAllCars() {
         return cars;
+    }
+
+    //8. remove all cars
+    public void removeAll() {
+       cars.clear();
     }
 }

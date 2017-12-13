@@ -17,13 +17,13 @@ public class GarageTest {
     }
 
     @Test
-    public void testGarage(){
+    public void testAddCarIntoGarage(){
         Garage garage = new Garage();
 
         // 1.TOYOTA
         Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car1);
+        garage.park(car1);
         assertEquals(1, garage.getNumberOfCars());
 
         ArrayList<Car> allCars = garage.getAllCars();
@@ -34,7 +34,7 @@ public class GarageTest {
         // 2.MITSUBISHI
         Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car2);
+        garage.park(car2);
         assertEquals(2, garage.getNumberOfCars());
         assertEquals(2, allCars.size());
         assertEquals(car1, allCars.get(0));
@@ -43,7 +43,7 @@ public class GarageTest {
         // 3.NISSAN
         Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
         // add into array
-        garage.parkCarIntoGarage(car3);
+        garage.park(car3);
         assertEquals(3, garage.getNumberOfCars());
         assertEquals(3, allCars.size());
         assertEquals(car1, allCars.get(0));
@@ -58,41 +58,41 @@ public class GarageTest {
         // Car1:TOYOTA
         Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car1);
+        garage.park(car1);
         // Car2:MITSUBISHI
         Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car2);
+        garage.park(car2);
         // Car3:NISSAN
         Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
         // add into array
-        garage.parkCarIntoGarage(car3);
+        garage.park(car3);
 
         // remove cars from array
-        garage.removeACarFromGarage(car1);
-        garage.removeACarFromGarage(car2);
-        garage.removeACarFromGarage(car3);
-        assertFalse(garage.isCarInGarage(car1));
-        assertFalse(garage.isCarInGarage(car2));
-        assertFalse(garage.isCarInGarage(car3));
+        garage.remove(car1);
+        garage.remove(car2);
+        garage.remove(car3);
+        assertFalse(garage.isCarPresent(car1));
+        assertFalse(garage.isCarPresent(car2));
+        assertFalse(garage.isCarPresent(car3));
     }
 
     @Test
-    public void removeAllCarsFromGarage() {
+    public void testRemoveSpecifiedCarsFromGarage() {
         Garage garage = new Garage();
 
         // Car1:TOYOTA
         Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car1);
+        garage.park(car1);
         // Car2:MITSUBISHI
         Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car2);
+        garage.park(car2);
         // Car3:NISSAN
         Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
         // add into array
-        garage.parkCarIntoGarage(car3);
+        garage.park(car3);
 
         // create a new list
         List<Car> removedList = new ArrayList<>();
@@ -101,72 +101,94 @@ public class GarageTest {
         removedList.add(car3);
 
         // remove all cars from array
-        assertTrue(garage.removeAllCarsFromGarage(removedList));
+        assertTrue(garage.removeCars(removedList));
         assertEquals(1, garage.getNumberOfCars());
         assertEquals(car2, garage.getAllCars().get(0));
     }
 
     @Test
-    public void isCarInGarage() {
+    public void testIsCarPresent() {
         Garage garage = new Garage();
 
         // Car1:TOYOTA
         Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car1);
+        garage.park(car1);
         // Car2:MITSUBISHI
         Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car2);
+        garage.park(car2);
         // Car3:NISSAN
         Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
         // add into array
-        garage.parkCarIntoGarage(car3);
+        garage.park(car3);
 
-        assertTrue(garage.isCarInGarage(car1));
-        assertTrue(garage.isCarInGarage(car2));
-        assertTrue(garage.isCarInGarage(car3));
+        assertTrue(garage.isCarPresent(car1));
+        assertTrue(garage.isCarPresent(car2));
+        assertTrue(garage.isCarPresent(car3));
     }
 
     @Test
-    public void getIndexOfCar() {
+    public void testGetIndexOfCar() {
         Garage garage = new Garage();
 
         // Car1:TOYOTA
         Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car1);
+        garage.park(car1);
         // Car2:MITSUBISHI
         Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car2);
+        garage.park(car2);
         // Car3:NISSAN
         Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
         // add into array
-        garage.parkCarIntoGarage(car3);
+        garage.park(car3);
 
-        assertEquals(0, garage.getIndexOfCar(car1));
-        assertEquals(1, garage.getIndexOfCar(car2));
-        assertEquals(2, garage.getIndexOfCar(car3));
+        assertEquals(0, garage.getIndexOf(car1));
+        assertEquals(1, garage.getIndexOf(car2));
+        assertEquals(2, garage.getIndexOf(car3));
     }
 
     @Test
-    public void garageIsEmpty() {
+    public void testGarageIsEmpty() {
         Garage garage = new Garage();
 
         // Car1:TOYOTA
         Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car1);
+        garage.park(car1);
         // Car2:MITSUBISHI
         Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
         // add into array
-        garage.parkCarIntoGarage(car2);
+        garage.park(car2);
         // Car3:NISSAN
         Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
         // add into array
-        garage.parkCarIntoGarage(car3);
+        garage.park(car3);
 
-        assertFalse(garage.isGarageEmpty());
+        assertFalse(garage.isEmpty());
+    }
+
+    @Test
+    public void testRemoveAll() {
+        Garage garage = new Garage();
+
+        // Car1:TOYOTA
+        Car car1 = new Car("Toyota", "green", 80, 20, 4, false, "no weapon", 180);
+        // add into array
+        garage.park(car1);
+        // Car2:MITSUBISHI
+        Car car2 = new Car("Mitsubishi", "black", 70, 20, 4, false, "no weapon", 180);
+        // add into array
+        garage.park(car2);
+        // Car3:NISSAN
+        Car car3 = new Car("Nissan", "gary", 90, 10, 4, false, "no weapon", 190);
+        // add into array
+        garage.park(car3);
+
+        garage.removeAll();
+        assertEquals(0, garage.getNumberOfCars());
+        assertTrue(garage.isEmpty());
     }
 }
