@@ -18,7 +18,6 @@ public class ShoppingCartTest {
     private Product product4;
     private Product product5;
 
-    // 把參數替換成變數?
     @Before
     public void init() {
         product1 = new Product(Long.valueOf(001), "comic", 729, 20);
@@ -115,7 +114,6 @@ public class ShoppingCartTest {
     }
 
     // 6. Count total quantity of products in cart.
-    // 這邊寫起來不順,應該要再修改
     @Test
     public void testTotalQuantity() {
         ShoppingCart shoppingCart = new ShoppingCart();
@@ -130,7 +128,6 @@ public class ShoppingCartTest {
     }
 
     // 7. Calculate the total price of the cart.
-    // 也要再修改
     @Test
     public void testTotalPrice() {
         ShoppingCart shoppingCart = new ShoppingCart();

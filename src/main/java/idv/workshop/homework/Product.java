@@ -46,9 +46,6 @@ public class Product {
         this.quantity = quantity;
     }
 
-
-    // 以下的東西都不熟
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

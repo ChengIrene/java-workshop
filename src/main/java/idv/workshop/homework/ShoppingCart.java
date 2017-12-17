@@ -51,6 +51,9 @@ public class ShoppingCart {
     public int getTotalQuantity() {
         int totalQuantity = 0;
         for(int i = 0; i < products.size(); i++) {
+
+            // products.get(i)就是把當前的第i個商品取出來
+            // for迴圈裡, i會代表當前迭代到的那個商品
             totalQuantity += products.get(i).getQuantity();
         }
         return totalQuantity;
@@ -64,6 +67,18 @@ public class ShoppingCart {
         }
         return totalPrice;
     }
+    /*
+    *  另一種做法:
+    *
+    *  for(int i = 0; i < products.size(); i++) {
+    *      Product currentProduct = products.get(i);
+    *      Integer price = currentProduct.getPrice();
+    *      Integer quantity = currentProduct.getQuantity();
+    *      totalPrice += price * quantity;
+    *  }
+    *  return totalPrice;
+    *
+    * */
 
     // 8. Find the specified product is in the cart or not.
     public boolean isProductPresent(Product product) {
