@@ -196,6 +196,6 @@ public class DateTest {
         final LocalDate creditCardLocalDate = creditCard.atDay(5);
         System.out.println(birthdayLocalDate);
         System.out.println(creditCardLocalDate);
-        
+
     }
 }
