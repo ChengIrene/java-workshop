@@ -1,13 +1,13 @@
 package idv.workshop.homework;
 
-public class JavaSE9Ch3ExercisesTest {
+public class JavaSE9Ch3Exercises {
     public static void main(String[] args) {
 
         //找出最大公因數(GCD = greatest common divisor)與最小公倍數(LCM = lowest common multiple)
         int m = 1000;
         int n = 495;
 
-        JavaSE9Ch3ExercisesTest gcdAndLcm = new JavaSE9Ch3ExercisesTest();
+        JavaSE9Ch3Exercises gcdAndLcm = new JavaSE9Ch3Exercises();
         int gcd = gcdAndLcm.calculateGcd(m, n);
         int lcm = gcdAndLcm.calculateLcm(m, n);
 
@@ -15,7 +15,7 @@ public class JavaSE9Ch3ExercisesTest {
         System.out.println(lcm);
 
         //找出所有三位數的阿姆斯壯數
-        JavaSE9Ch3ExercisesTest armstrongNumber = new JavaSE9Ch3ExercisesTest();
+        JavaSE9Ch3Exercises armstrongNumber = new JavaSE9Ch3Exercises();
         armstrongNumber.calculateArmstrongNumber();
     }
 

@@ -1,6 +1,6 @@
 package idv.workshop.homework;
 
-public class JavaSE9Ch3BasicCodingTest {
+public class JavaSE9Ch3BasicCoding {
     public static void main(String[] args) {
 
         //求各型態的數值範圍
