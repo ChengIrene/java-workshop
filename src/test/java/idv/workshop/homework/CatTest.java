@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CatTest {
 
     @Test
-    public void testCreate(){
+    public void testCreate() {
         final String nameOfYuri = "Yuri";
         final int ageOfYuri = 5;
         final int weightOfYuri = 10;

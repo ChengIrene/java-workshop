@@ -146,4 +146,34 @@ public class Car {
             return false;
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+
+        if (generation != car.generation) return false;
+        if (carAge != car.carAge) return false;
+        if (numberOfWheel != car.numberOfWheel) return false;
+        if (hasWeapon != car.hasWeapon) return false;
+        if (maxSpeed != car.maxSpeed) return false;
+        if (brand != null ? !brand.equals(car.brand) : car.brand != null) return false;
+        if (color != null ? !color.equals(car.color) : car.color != null) return false;
+        return weaponName != null ? weaponName.equals(car.weaponName) : car.weaponName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = brand != null ? brand.hashCode() : 0;
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        result = 31 * result + generation;
+        result = 31 * result + carAge;
+        result = 31 * result + numberOfWheel;
+        result = 31 * result + (hasWeapon ? 1 : 0);
+        result = 31 * result + (weaponName != null ? weaponName.hashCode() : 0);
+        result = 31 * result + maxSpeed;
+        return result;
+    }
 }

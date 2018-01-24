@@ -15,6 +15,7 @@ public class CashCard {
     public void store(int money) {  //儲存時呼叫的方法
         if(money > 0) {
             this.balance += money;
+            System.out.println(money);
             if(money >= 1000) {
                 this.bonus++;
             }

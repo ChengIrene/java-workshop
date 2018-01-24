@@ -30,11 +30,15 @@ public class ArrayList {
     }
 
 
-    //不懂
-    public void toString(Object o) {
-        ArrayList list = new ArrayList();
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        //for(int i = 0; i < elems.length; i++) {}
+        for (Object object : elems) {
+            if (object != null) {
+                result.append(object.toString() + "\n");
+            }
         }
+        return result.toString();
     }
 }

@@ -7,7 +7,7 @@ public class FibonacciRecursive {
         long result = 0;
 
         if(n < 0) {
-            return -1;
+            throw new IllegalArgumentException("Input should greater than 0");
         }
 
         for (int i = 1; i <= n; i++) {
