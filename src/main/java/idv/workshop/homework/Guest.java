@@ -11,7 +11,7 @@ public class Guest {
         printUpperCase(names);
     }
 
-    static void collectNameTo(ArrayList names) {
+    public static void collectNameTo(ArrayList names) {
         Scanner console = new Scanner(System.in);
         while (true) {
             out.print("訪客名稱: ");
@@ -23,7 +23,7 @@ public class Guest {
         }
     }
 
-    static void printUpperCase(ArrayList names) {
+    public static void printUpperCase(ArrayList names) {
         for(int i = 0; i < names.size(); i++) {
             String name = (String) names.get(i);
             out.println(name.toUpperCase());

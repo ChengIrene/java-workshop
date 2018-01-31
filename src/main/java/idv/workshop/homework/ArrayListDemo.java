@@ -1,5 +1,8 @@
 package idv.workshop.homework;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 public class ArrayListDemo {
 
     public static void main(String[] args) {
@@ -22,6 +25,41 @@ public class ArrayListDemo {
         //}
 
         System.out.println(arrayList);
+
+        ArrayList collection1 = new ArrayList();
+        collection1.add(10);
+        collection1.add(30);
+        collection1.add(40);
+        collection1.add(5);
+
+        ArrayList collection2 = new ArrayList();
+        collection2.add(10);
+        collection2.add(30);
+        collection2.add(40);
+        collection2.add(5);
+
+        ArrayList collection3 = new ArrayList();
+        collection3.add(10);
+        collection3.add(33);
+        collection3.add(40);
+        collection3.add(5);
+
+        System.out.println(collection1.equals(collection2));
+        System.out.println(collection1.equals(collection3));
     }
 
+    private void doNothing() {
+        // A utility class for array objects (Object[])
+        // Arrays.equals();
+        int[] intArray = new int[20];
+        int[] intArray2 = new int[30];
+        Arrays.equals(intArray, intArray2);
+        char[] charArray = new char[10];
+
+        // ArrayList is a type of collection, similar to LinkedList.
+        java.util.ArrayList arrayList = new java.util.ArrayList();
+        LinkedList linkedList = new LinkedList();
+
+
+    }
 }

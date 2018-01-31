@@ -29,16 +29,43 @@ public class ArrayList {
         return next;
     }
 
-
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        //for(int i = 0; i < elems.length; i++) {}
-        for (Object object : elems) {
-            if (object != null) {
-                result.append(object.toString() + "\n");
+
+        for(int i = 0; i < elems.length; i++) {
+            if (elems[i] != null) {
+                result.append(elems[i].toString() + "\n");
             }
         }
+
+        //for (Object object : elems) {
+            //if (object != null) {
+                //result.append(object.toString() + "\n");
+            //}
+        //}
+
         return result.toString();
+    }
+
+    // Method signature (function signature)
+    // return type + function name + function parameters
+    // boolean equals(Object o)
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        // 1. compare the total elements count
+        if (this.size() == ((ArrayList) o).size()) {
+            // 2. compare each element's equality
+            for(int i = 0; i < this.size(); i++) {
+                if (this.get(i) != ((ArrayList) o).get(i)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }

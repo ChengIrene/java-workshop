@@ -1,7 +1,7 @@
 package idv.workshop.homework;
 
-public class JavaSE9Ch6Exercises extends ArrayList {
+import java.lang.reflect.Array;
 
-    //待補
+public class JavaSE9Ch6Exercises  {
 
 }
