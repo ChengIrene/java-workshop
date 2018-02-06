@@ -1,8 +1,8 @@
 package idv.workshop.homework;
 
 public class Client {
-    public final String name;
-    public final String ip;
+    private final String name;
+    private final String ip;
 
     public Client(String name, String ip) {
         this.name = name;
