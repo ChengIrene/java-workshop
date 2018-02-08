@@ -3,7 +3,7 @@ package idv.workshop.homework;
 public class AutoClosableDemo2 {
     public static void main(String[] args) {
 
-        //在try括號中,越後面撰寫的物件資源會越早被關閉,所以other
+        //在try括號中,越後面撰寫的物件資源會越早被關閉,所以other會先被關閉
         try(ResourceSome some = new ResourceSome(); ResourceOther other = new ResourceOther()) {
             some.doSome();
             other.doOther();
@@ -33,4 +33,4 @@ class ResourceOther implements AutoCloseable {
     public void close() throws Exception {
         System.out.println("Resource Other be closed.");
     }
-}會先被關閉
+}

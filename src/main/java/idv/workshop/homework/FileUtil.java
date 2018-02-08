@@ -8,7 +8,6 @@ import static idv.workshop.homework.Average4.console;
 
 public class FileUtil {
 
-    //這種測試是要怎麼測呀!?
 
     public static String readFile(String name) throws FileNotFoundException {
         //宣告方法中會拋出例外
