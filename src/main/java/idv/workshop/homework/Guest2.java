@@ -1,20 +1,21 @@
 package idv.workshop.homework;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import static java.lang.System.out;
 
-public class Guest {
+public class Guest2 {
     public static void main(String[] args) {
-        ArrayList names = new ArrayList();
+        List names = new ArrayList();
         collectNameTo(names);
-        out.println("訪客名單: ");
+        System.out.println("訪客名單: ");
         printUpperCase(names);
     }
 
-    public static void collectNameTo(ArrayList names) {
+    static void collectNameTo(List names) {
         Scanner console = new Scanner(System.in);
         while (true) {
-            out.print("訪客名稱: ");
+            System.out.println("Guest name: ");
             String name = console.nextLine();
             if(name.equals("quit")) {
                 break;
@@ -23,10 +24,10 @@ public class Guest {
         }
     }
 
-    public static void printUpperCase(ArrayList names) {
+    static void printUpperCase(List names) {
         for(int i = 0; i < names.size(); i++) {
             String name = (String) names.get(i);
-            out.println(name.toUpperCase());
+            System.out.println(name.toUpperCase());
         }
     }
 }

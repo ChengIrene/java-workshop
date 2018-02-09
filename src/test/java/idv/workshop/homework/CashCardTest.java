@@ -6,7 +6,7 @@ import static junit.framework.TestCase.assertEquals;
 public class CashCardTest {
 
     @Test
-    public void testCreate() throws CashCard.InsufficientException {
+    public void testCreate() throws InsufficientException {
         final String  suica5472OfNumber = "suica5472";
         final int suica5472OfBalance = 1000;
         final int suica5472OfBonus = 10;
@@ -35,14 +35,22 @@ public class CashCardTest {
         assertEquals(10, suica5472.getBonus());
 
         //儲值負數,斷言有顯示出錯誤的訊息
-        suica5472.store(-100);
+        //suica5472.store(-100);
+    }
 
-        //例外拋出的測試是這樣子的嗎!!!???
-        //測試餘額不足不錯誤拋出,結果拋出後文字有正確顯示出來
+    @ Test(expected = InsufficientException.class)
+    public void testException() throws InsufficientException {
+
+        final String  suica5472OfNumber = "suica5472";
+        final int suica5472OfBalance = 1000;
+        final int suica5472OfBonus = 10;
+
+        CashCard suica5472 = new CashCard(suica5472OfNumber, suica5472OfBalance, suica5472OfBonus);
+
+        //測試餘額不足不錯誤拋出
         suica5472.charge(3000);
 
-        //測試兌換超額紅利點的數錯誤拋出,結果同上
+        //測試兌換超額紅利點的數錯誤拋出
         suica5472.exchange(20);
-
     }
 }
