@@ -3,7 +3,8 @@ package idv.workshop.homework;
 import java.util.Scanner;
 import static java.lang.System.out;
 
-public class Guest {
+public class
+Guest {
     public static void main(String[] args) {
         ArrayList names = new ArrayList();
         collectNameTo(names);
