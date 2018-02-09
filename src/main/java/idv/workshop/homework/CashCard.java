@@ -17,8 +17,7 @@ public class CashCard {
         if(money > 0) {
             this.balance += money;
             System.out.println(money);
-        }  else if (money <= 0) {
-            assert money >= 0 : "マイナス金額チャージするつもり?　やめなさいよ～本気でチャージしよう～";
+        }  else {
             throw new IllegalArgumentException("必須大於0");
         }
 
@@ -34,8 +33,7 @@ public class CashCard {
 
         if(money > 0) {
             this.balance -= money;
-        } else if (money <= 0) {
-            assert money >= 0 : "マイナス金額を引き落とす?　それはチャージじゃないか?";
+        } else {
             throw new IllegalArgumentException("不應該小於0");
         }
     }

@@ -38,7 +38,7 @@ public class CashCardTest {
         //suica5472.store(-100);
     }
 
-    @ Test(expected = InsufficientException.class)
+    @Test(expected = InsufficientException.class)
     public void testException() throws InsufficientException {
 
         final String  suica5472OfNumber = "suica5472";
@@ -48,7 +48,13 @@ public class CashCardTest {
         CashCard suica5472 = new CashCard(suica5472OfNumber, suica5472OfBalance, suica5472OfBonus);
 
         //測試餘額不足不錯誤拋出
-        suica5472.charge(3000);
+
+        try{
+            suica5472.charge(3000);
+        } catch(InsufficientException exception) {
+            System.out.println("InsufficientException occurred, remain: " + exception.getRemain());
+            throw exception;
+        }
 
         //測試兌換超額紅利點的數錯誤拋出
         suica5472.exchange(20);
