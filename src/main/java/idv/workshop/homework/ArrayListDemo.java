@@ -56,7 +56,7 @@ public class ArrayListDemo {
         Arrays.equals(intArray, intArray2);
         char[] charArray = new char[10];
 
-        // ArrayList is a type of collection, similar to LinkedList.
+        // ArrayList is a type of collection, similar to LinkedNode.
         java.util.ArrayList arrayList = new java.util.ArrayList();
         LinkedList linkedList = new LinkedList();
 
