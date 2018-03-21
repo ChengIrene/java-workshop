@@ -33,7 +33,7 @@ public class LinkedList {
             LinkedNode tmp = head;  //把head先標籤貼在tmp上
             head = head.getNext();  //取得head的下一個節點,再貼上head
             size--;  //長度-1
-            return tmp;  //釋放tmp??
+            return tmp;  //要不要傳回被刪掉的節點沒有一定的答案
         }
     }
 
@@ -55,15 +55,15 @@ public class LinkedList {
         }
 
         LinkedNode deleted = head;    //有一種初始化的感覺(?) 從頭開始跑這樣
-        LinkedNode prevoius = head;
+        LinkedNode previous = head;
 
         // To search the deleted node and it's previous node
         while (deleted.getId() != id) {
             if(deleted.getNext() == null) {
                 return null;
             } else {
-                prevoius = deleted;  //因為找到就會跳出迴圈,所以把原本的deleted標籤給previous
-                deleted = deleted.getNext();  //再把下一個要刪除的節點貼上deleted標籤
+                previous = deleted;  //把原本的deleted標籤給previous
+                deleted = deleted.getNext();  //再把下一個節點貼上deleted標籤,繼續跑回圈到找到為止
             }
         }
 
@@ -71,11 +71,11 @@ public class LinkedList {
         if(deleted.equals(head)) {  //如果刪除的節點是head的話
             head = head.getNext();  //將head下一個節點貼上head
         } else {
-            prevoius.setNext(deleted.getNext());  //將previous跳過deleted,直接指向deleted的下一個
+            previous.setNext(deleted.getNext());  //將previous跳過deleted,直接指向deleted的下一個
         }
 
         size--;  //長度-1
-        return deleted;  //釋放deleted(?)
+        return deleted;  //要不要傳回被刪掉的節點沒有一定的答案
     }
 
     /*
@@ -97,6 +97,8 @@ public class LinkedList {
     * 2. 用剛才找到的中間點去把串列分成兩半
     * 3. 用反序的方式重排後半段
     * 4. 把兩半串列合起來
+    *
+    * 因為比較難,所以先放置XD
     *
     * https://yotsuba1022.gitbooks.io/data-structure-note/content/linked-list-reorder-function.html
     *
@@ -123,7 +125,7 @@ public class LinkedList {
         node = new LinkedNode(0);
 
         LinkedNode current = node;
-        while (firstHead != null) {
+        while (firstHead != null || secondHead != null) {
             // First, add one node from the first part into the list
             if(firstHead != null) {
                 current.setNext(firstHead);
@@ -144,7 +146,7 @@ public class LinkedList {
         return node;
     }
 
-    private LinkedNode reverseList(LinkedNode node) {
+    private LinkedNode reverseList(LinkedNode node) {  //看完攻略本後已懂,也會寫ㄌ
         LinkedNode previous = null;
         LinkedNode current = node;
         LinkedNode next;
