@@ -12,17 +12,17 @@ package idv.workshop.homework;
 * 參考:https://yotsuba1022.gitbooks.io/data-structure-note/content/mergesort.html
 * */
 
-public class MergeSort {  //已測試完,不過遞迴的部分還不太了解如何運作
+public class MergeSort {  //已測試完,遞迴的部分是分而治之方式,不過對我而言大概是二元樹跑前序走訪的感覺
 
     public void mergeSort(int[] data) {
         int[] temp = new int[data.length];
         doMergeSort(data, temp, 0, data.length - 1);
     }
 
-    private void doMergeSort(int[] data, int[] temp, int from, int to) {
+    private void doMergeSort(int[] data, int[] temp, int from, int to) {  //先甘後苦
 
         if(from >= to) {
-            return;
+            return;  //跳出方法外
         }
 
         //Step1. Calculate the bound index  計算範圍索引
@@ -47,7 +47,7 @@ public class MergeSort {  //已測試完,不過遞迴的部分還不太了解如
         int minLeft = from;
 
         //The max index of the left part  左邊部分最大索引
-        int maxLeft = mid - 1;  //因為傳進去的值為mid+1,所以-1才會再得到原本的中間值(?)
+        int maxLeft = mid - 1;  //分左右兩邊用
 
         //Step1. Get values from part and compare with the right part
         while (from <= maxLeft && mid <= to) {
@@ -66,7 +66,7 @@ public class MergeSort {  //已測試完,不過遞迴的部分還不太了解如
         //Step2. Handle the remaining part:  處理剩下的部分
 
         //2.1 For the left part
-        while (from <= maxLeft) {
+        while (from <= maxLeft) {  //兩兩比較後剩下的數就用這方式加入temp
             temp[count++] = data[from++];
         }
 
