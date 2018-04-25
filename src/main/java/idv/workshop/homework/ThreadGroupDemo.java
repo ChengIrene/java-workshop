@@ -9,13 +9,13 @@ public class ThreadGroupDemo {
             @Override
             public void uncaughtException(Thread thread, Throwable throwable) {
                 System.out.printf("%s: %s%n", thread.getName(), throwable.getMessage());
-                //跑出來會是 "Thread-0: 測試之外"
+                //跑出來會是 "Thread-0: 測試例外"
             }
         };
 
         //Lambda
         Thread thread = new Thread(group, () -> {
-            throw new RuntimeException("測試之外");
+            throw new RuntimeException("測試例外");
         });
 
         thread.start();

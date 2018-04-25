@@ -18,6 +18,10 @@ public class ThreadGroupDemo2 {
             throw new RuntimeException("thread2 測試例外");
         });
 
+        //thread2.setUncaughtExceptionHandler((thread, throwable) -> {
+        //    System.out.printf("%s: %s%n", thread.getName(), throwable.getMessage());
+        //});
+
         thread1.start();
         thread2.start();
     }
