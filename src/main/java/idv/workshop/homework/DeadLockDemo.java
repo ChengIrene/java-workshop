@@ -33,7 +33,7 @@ public class DeadLockDemo {
             for (int i = 0; i < 10; i++) {
                 resource1.cooperate(resource2);  // 取得resource1的鎖定
                 // 然後thread1打算運用傳入的resource2呼叫doSome(),應取得resource2的鎖定,但現在卻被thread2拿走了
-                // 於是thread1進入阻斷然後就卡住惹!!! 跑不動RRR
+                // 於是thread1進入阻斷然後就卡住惹!!!
             }
         });
 
@@ -46,7 +46,7 @@ public class DeadLockDemo {
         });
 
         // 簡單來說就是一個 "你不放開resource1鎖定,我就不放開resource2鎖定" 的狀態
-        //
+        // 跑不動RRR
 
         thread1.start();
         thread2.start();
