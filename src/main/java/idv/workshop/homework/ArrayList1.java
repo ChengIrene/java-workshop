@@ -2,15 +2,15 @@ package idv.workshop.homework;
 
 import java.util.Arrays;
 
-public class ArrayList {
+public class ArrayList1 {
     private Object[] elems;  //使用Object陣列收集
     private int next;  //下一個可儲存物件的索引
 
-    public ArrayList(int capacity) {  //指定初始容量
+    public ArrayList1(int capacity) {  //指定初始容量
         elems = new Object[capacity];
     }
 
-    public ArrayList() {
+    public ArrayList1() {
         this(16);  //初始容量預設為16
     }
 
@@ -57,10 +57,10 @@ public class ArrayList {
             return true;
         }
         // 1. compare the total elements count
-        if (this.size() == ((ArrayList) o).size()) {
+        if (this.size() == ((ArrayList1) o).size()) {
             // 2. compare each element's equality
             for(int i = 0; i < this.size(); i++) {
-                if (this.get(i) != ((ArrayList) o).get(i)) {
+                if (this.get(i) != ((ArrayList1) o).get(i)) {
                     return false;
                 }
             }

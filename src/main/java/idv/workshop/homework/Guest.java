@@ -5,13 +5,13 @@ import static java.lang.System.out;
 
 public class Guest {
     public static void main(String[] args) {
-        ArrayList names = new ArrayList();
+        ArrayList1 names = new ArrayList1();
         collectNameTo(names);
         out.println("訪客名單: ");
         printUpperCase(names);
     }
 
-    public static void collectNameTo(ArrayList names) {
+    public static void collectNameTo(ArrayList1 names) {
         Scanner console = new Scanner(System.in);
         while (true) {
             out.print("訪客名稱: ");
@@ -23,7 +23,7 @@ public class Guest {
         }
     }
 
-    public static void printUpperCase(ArrayList names) {
+    public static void printUpperCase(ArrayList1 names) {
         for(int i = 0; i < names.size(); i++) {
             String name = (String) names.get(i);
             out.println(name.toUpperCase());

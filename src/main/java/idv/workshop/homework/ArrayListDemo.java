@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class ArrayListDemo {
 
     public static void main(String[] args) {
-        ArrayList arrayList = new ArrayList();
+        ArrayList1 arrayList = new ArrayList1();
 
         Customer c1 = new Customer("QQ");  // memory location: 0xeor84k
         Customer c2 = new Customer("QQ");  // memory location: 0xne84j5
@@ -26,19 +26,19 @@ public class ArrayListDemo {
 
         System.out.println(arrayList);
 
-        ArrayList collection1 = new ArrayList();
+        ArrayList1 collection1 = new ArrayList1();
         collection1.add(10);
         collection1.add(30);
         collection1.add(40);
         collection1.add(5);
 
-        ArrayList collection2 = new ArrayList();
+        ArrayList1 collection2 = new ArrayList1();
         collection2.add(10);
         collection2.add(30);
         collection2.add(40);
         collection2.add(5);
 
-        ArrayList collection3 = new ArrayList();
+        ArrayList1 collection3 = new ArrayList1();
         collection3.add(10);
         collection3.add(33);
         collection3.add(40);
@@ -56,7 +56,7 @@ public class ArrayListDemo {
         Arrays.equals(intArray, intArray2);
         char[] charArray = new char[10];
 
-        // ArrayList is a type of collection, similar to LinkedNode.
+        // ArrayList1 is a type of collection, similar to LinkedNode.
         java.util.ArrayList arrayList = new java.util.ArrayList();
         LinkedList linkedList = new LinkedList();
 

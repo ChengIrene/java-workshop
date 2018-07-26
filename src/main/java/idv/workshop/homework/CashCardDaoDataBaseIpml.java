@@ -2,7 +2,7 @@ package idv.workshop.homework;
 
 public class CashCardDaoDataBaseIpml implements CashCardDao {
 
-    ArrayList cashCards = new ArrayList();
+    ArrayList1 cashCards = new ArrayList1();
 
     @Override
     public void save(CashCard cashCard) {

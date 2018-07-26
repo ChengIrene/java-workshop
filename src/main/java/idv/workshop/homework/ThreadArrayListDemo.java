@@ -29,7 +29,7 @@ public class ThreadArrayListDemo {
 
 
     public static void main(String[] args) {
-        ArrayList list = new ArrayList();
+        ArrayList1 list = new ArrayList1();
         Thread thread1 = new Thread(() -> {
             while (true) {
                 synchronized (list) {  // (三) 可以指定取得鎖定的物件來源,對於本身設計沒有考慮競速問題的API來說,也可以如此撰寫
